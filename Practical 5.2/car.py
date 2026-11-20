@@ -1,6 +1,7 @@
 class Car:
 
     top_speed = 30
+    stationary = 0
 
     def __init__(self, make, year):
 
@@ -22,7 +23,10 @@ class Car:
             self.__speed += 5
 
     def brake(self):
-        self.__speed -= 5
+        if self.__speed - 5 <= self.stationary:
+            raise TypeError("The car is already fully braked")
+        else:
+            self.__speed -= 5
 
     def get_speed(self):
         return self.__speed
