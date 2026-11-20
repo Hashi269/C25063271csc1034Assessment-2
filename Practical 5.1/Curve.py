@@ -9,7 +9,6 @@ class Curve:
             self.append_if_valid(input)
 
     def append_if_valid(self, item):
-    """add a new point object to the curve"""
 
         if not isinstance(item, Point):
             raise TypeError("item is not a Point")
@@ -23,7 +22,7 @@ class Curve:
     def __repr__(self):
         """formal string representation of a curve"""
         s = ", "
-        s = s.join([repr(x) for x in self.items]
+        s = s.join([repr(x) for x in self.items])
         return "Curve:({})".format(s)
 
 
