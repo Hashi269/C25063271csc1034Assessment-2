@@ -10,6 +10,8 @@ class Car:
         self.year = year
         self.speed = 0
 
+#defining ways to increase and decrease speed as well as a way to call the final speed
+
     def accelerate(self):
         self.speed += 5
 
