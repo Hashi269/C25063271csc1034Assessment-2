@@ -19,4 +19,7 @@ my_car.brake()
 
 print(my_car.get_speed())
 
+print(my_car.get_make())
+print(my_car.get_year())
+
 
