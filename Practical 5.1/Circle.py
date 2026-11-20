@@ -1,6 +1,5 @@
 from Point import Point
-import numpy as np
-
+import math
 
 class Circle:
     def __init__(self, o, r):
@@ -9,27 +8,27 @@ class Circle:
         self.o = o
         self.r = r
 
-
-    def __init__(self, o, r):
-        """constructor for a circle, origin point is middle"""
-
-        pass
-
     def __str__(self):
         """string representation of a circle"""
-        pass
+        return "circle({}, {}, {})".format(self.o.x, self.o.y, self.r)
 
     def __repr__(self):
         """formal string representation of a circle"""
-        pass
+        return "circle({}, {})".format(self.o, self.r)
 
     def area(self):
         """method to find the area of a circle"""
-        pass
+        return math.pi * (self.r * self.r)
 
     def perimeter(self):
         """method to find the perimeter of a circle"""
-        pass
+        return 2 * math.pi * self.r
 
     def __contains__(self, p):
         """method to determine whether a given point is inside the object"""
+        if p.x > self.o.x + self.r / 2 or p.x < self.o.x - self.r / 2:
+            return False
+        if p.y > self.o.y + self.r / 2 or p.y < self.o.y - self.r / 2:
+            return False
+
+        return True
