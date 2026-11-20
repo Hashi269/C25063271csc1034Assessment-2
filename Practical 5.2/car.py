@@ -30,3 +30,13 @@ class Car:
 
     def get_speed(self):
         return self.__speed
+
+    #defining ways to access the cars attributes
+
+    def get_make(self):
+        return self.__make
+
+    def get_year(self):
+        return self.__year
+
+
