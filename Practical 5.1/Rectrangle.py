@@ -1,24 +1,35 @@
 #class to represent a rectangle on a graph
+from Point import Point
+
 class Rectangle:
     def __init__(self, o, w, l):
-        # string representation of a rectangle
+        if not isinstance(o, Point):
+            raise TypeError("o is not a Point")
+        # string representation of a rectangle o = origin, l = length, w = width
         self.o = o
         self.w = w
         self.l = l
-        pass
 
     def __str__(self):
-        return str(self.o)
+        return "Rectangle({}, {}, {}, {})".format(self.o.x, self.o.y, self.w, self.l)
+
     #formal string representation of a rectangle
     def __repr__(self):
+        return "Rectangle({}, {}, {})".format(self.o, self.w, self.l)
 
-        pass
     #method to find the area of a rectangle
     def area(self):
-        pass
+        return self.w * self.l
+
     #method to find the perimeter of a rectangle
     def perimeter(self):
-        pass
+        return self.w * 2 + self.l * 2
+
     #method to determine whether a given point is inside the object
     def __contains__(self, p):
-        pass
+        if p.x > self.o.x + self.l / 2 or p.x < self.o.x - self.l / 2:
+            return False
+        if p.y > self.o.y + self.w / 2 or p.y < self.o.y - self.w / 2:
+            return False
+
+        return True
