@@ -5,6 +5,10 @@ class Rectangle:
     def __init__(self, o, w, l):
         if not isinstance(o, Point):
             raise TypeError("o is not a Point")
+        if not isinstance(w, int):
+            raise TypeError("w is not an integer")
+        if not isinstance(l, int):
+            raise TypeError("l is not an integer")
         # string representation of a rectangle o = origin, l = length, w = width
         self.o = o
         self.w = w
