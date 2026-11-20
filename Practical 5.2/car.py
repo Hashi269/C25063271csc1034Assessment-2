@@ -1,4 +1,7 @@
 class Car:
+
+    top_speed = 30
+
     def __init__(self, make, year):
 
         if not isinstance(make, str):
@@ -6,18 +9,20 @@ class Car:
         if not isinstance(year, int):
             raise TypeError("year is not an integer")
 
-        self.make = make
-        self.year = year
-        self.speed = 0
+        self.__make = make
+        self.__year = year
+        self.__speed = 0
 
 #defining ways to increase and decrease speed as well as a way to call the final speed
 
     def accelerate(self):
-        self.speed += 5
+        if self.__speed + 5 >= self.top_speed:
+            raise TypeError("The speed is too high")
+        else:
+            self.__speed += 5
 
     def brake(self):
-        self.speed -= 5
+        self.__speed -= 5
 
     def get_speed(self):
-        return self.speed
-
+        return self.__speed
