@@ -5,6 +5,8 @@ class Circle:
     def __init__(self, o, r):
         if not isinstance(o, Point):
             raise TypeError("o is not a Point")
+        if not isinstance(r, int):
+            raise TypeError("r is not an integer")
         self.o = o
         self.r = r
 
