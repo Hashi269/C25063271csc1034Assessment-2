@@ -1,8 +1,10 @@
 #create a class to represent a point on a graph
 class Point:
     def __init__(self, x, y):
-            if not isinstance(x, int) or not isinstance(y, int):
-                raise TypeError("x and y must be integers")
+            if not isinstance(x, int):
+                raise TypeError("x and must be an integer")
+            if not isinstance(y, int):
+                raise TypeError("y and must be an integer")
             self.x = x
             self.y = y
 
