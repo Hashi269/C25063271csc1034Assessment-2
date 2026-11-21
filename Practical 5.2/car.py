@@ -84,4 +84,14 @@ class Car:
     def get_category(self):
         return self.__category
 
+    def age(self):
+        current_year = dt.date.today().year
+        return current_year - self.__year
+
+
+# way to lay out all the cars attributes
+
+    def __str__(self):
+        return "make={}, year={}, color={}, category={}".format(self.__make, self.__year, self.__color, self.__category)
+
 
