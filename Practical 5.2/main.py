@@ -1,25 +1,28 @@
 from car import Car
 
-my_car = Car("audi", 1994)
+car1 = Car("audi", 1994, "yellow", "SUV")
 
-my_car.accelerate()
-my_car.accelerate()
-my_car.accelerate()
-my_car.accelerate()
-my_car.accelerate()
-#my_car.accelerate() #should raise a Type Error
+car1.accelerate()
+car1.accelerate()
+car1.accelerate()
+car1.accelerate()
+car1.accelerate()
+#car1.accelerate() #should raise a Type Error
 
-print(my_car.get_speed())
+print(car1.get_speed())
 
-my_car.brake()
-my_car.brake()
-my_car.brake()
-my_car.brake()
-#my_car.brake() #should raise a Type Error
+car1.brake()
+car1.brake()
+car1.brake()
+car1.brake()
+#car1.brake() #should raise a Type Error
 
-print(my_car.get_speed())
+print(car1.get_speed())
 
-print(my_car.get_make())
-print(my_car.get_year())
+#print(car1.get_make())
+#print(car1.get_year())
+#print(car1.age())
+
+print(car1)
 
 
